@@ -20,3 +20,7 @@ export type Weather = {
     temp_min: number
   }
 }
+
+export type WeatherDetailProps = {
+  weather: Weather
+}
