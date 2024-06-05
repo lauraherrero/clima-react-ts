@@ -4,7 +4,7 @@ import styles from './Form.module.css'
 import { FormProps, SearchType } from "../../types";
 import { Alert } from "../Alert/Alert";
 
-export const Form = ({fetchWeather} : FormProps) => {
+export const Form = ({ fetchWeather }: FormProps) => {
 
   const [search, setSearch] = useState<SearchType>({
     city: '',
@@ -16,13 +16,13 @@ export const Form = ({fetchWeather} : FormProps) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
     setSearch({
       ...search,
-      [e.target.name] : e.target.value
+      [e.target.name]: e.target.value
     })
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if(Object.values(search).includes('')) {
+    if (Object.values(search).includes('')) {
       setAlert('Todos los campos son obligatorios')
       return;
     }
@@ -31,7 +31,7 @@ export const Form = ({fetchWeather} : FormProps) => {
   }
 
   return (
-    <form 
+    <form
       className={styles.form}
       onSubmit={handleSubmit}
     >
